@@ -507,8 +507,9 @@
   // metaタグによる自動リロードだと、一部のWebView環境で再読み込み時に
   // 画面が真っ白になることがあるため、JavaScriptによるリロードに変更している
   setTimeout(function () {
-    location.reload();
-  }, 60000);
+  var url = location.pathname + '?t=' + Date.now();
+  location.href = url;
+}, 60000);
 </script>
 
 </body>
